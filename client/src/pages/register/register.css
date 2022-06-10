@@ -1,6 +1,7 @@
 .register {
   width: 90%;
   height: 80vh;
+  min-height: 500px;
   max-width: 400px;
   margin: 50px auto;
   background: #fff;

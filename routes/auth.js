@@ -33,10 +33,10 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     try {
         const user = await User.findOne({username: req.body.username})
-        if(!user) return res.status(400).send('Invalid login Credentials')
+        if(!user) return res.status(400).send('Invalid Login Credentials')
     
         const originalPassword = CryptoJS.AES.decrypt(user.password, process.env.PASSWORD_SEC).toString(CryptoJS.enc.Utf8)
-        if(originalPassword !== req.body.password) return res.status(400).send('Invalid login Credentials')
+        if(originalPassword !== req.body.password) return res.status(400).send('Invalid Login Credentials')
 
         const token = user.generateAuthToken()
     
