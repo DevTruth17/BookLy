@@ -19,7 +19,7 @@ app.use(
     directives: {
       "img-src": ["'self'", "https: data:"],
       "script-src": ["'self'", "https: data:"],
-      "connect-src": ["'self'", "https: data:"]
+      "connect-src": ["'self'", "https: data: blob:"]
     }
   })
 )
